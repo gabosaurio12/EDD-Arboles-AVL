@@ -18,7 +18,7 @@ void rotaSD(nodoA* &raiz, nodoA *nodo) {
     nodoA *q = nodo->izq;
     nodoA *b = q->der;
 
-    if (padreAux != NULL) {
+    if (padreAux != NULL) {		 	
         if (padreAux->der == p)
             padreAux->der = q;
         else
@@ -172,19 +172,6 @@ void rotaDI(nodoA* &raiz, nodoA *nodo) {
 	}
 
 	r->fe = 0;
-}
-
-void profundidadNodo(nodoA *nodo, int &h) {
-	int profN = 0;
-	nodoA *aux = nodo;
-
-	while (aux) {
-		profN++;
-		aux = aux->padre;
-	}
-
-	if (profN > h)
-		h = profN;
 }
 
 int alturaArbol(nodoA *raiz) {
@@ -419,6 +406,7 @@ int main() {
 	nodoA *raiz = NULL;
 
 	cout << "Construcción de Árboles AVL \n";
+	cout << "Ingresar datos positivos, si se ingresa uno negativo se dejarán de leer datos \n";
 
 	bool band = 1;
 	while (band) {
